@@ -24,7 +24,7 @@ function bids4price(bids,decimals,result,index=0){
     }else{
         let normAmount = bids[index].amount/10**decimals
         let normPrice = bids[index].price/10**(16-decimals)    
-        if (result.maxBid < normPrice){result.maxBid = normPricecd}
+        if (result.maxBid < normPrice){result.maxBid = normPrice}
         result.wavesDepth += normAmount*normPrice
         return(bids4price(bids,decimals,result,index+1))
     }
